@@ -4,8 +4,7 @@ const sequelize = require('sequelize');// Importa a biblioteca do Sequelize
 module.exports = {
 
     ////////////////////////////////////////////////////////////////////////////////////////////////
-    //Rota para retonar todos os Posts
-     ////////////////////////////////////////////////////////////////////////////////////////////////
+   
     //Rota para retonar todos os Posts
     async index(req, res) {
         await Posts.sequelize.query(`SELECT * FROM posts ORDER BY created_at`)
@@ -19,6 +18,7 @@ module.exports = {
             });
     },
     ////////////////////////////////////////////////////////////////////////////////////////////////
+
    // busca os Post referente ao id informado
    async buscaid(req, res) {
     await Posts.sequelize.query(`SELECT * FROM posts WHERE id = ?`,
@@ -87,6 +87,7 @@ async update(req, res) {
 
 },
 ////////////////////////////////////////////////////////////////////////////////////////////////
+
 //insere um novo post na tabela
 async store(req, res) {
     await Posts.sequelize.query(
@@ -125,6 +126,7 @@ async store(req, res) {
         });
 },
 ////////////////////////////////////////////////////////////////////////////////////////////////
+
 // deleta o post referente ao id informado
 async delete(req, res) {
     await Posts.sequelize.query(`DELETE FROM posts WHERE id = ?`,

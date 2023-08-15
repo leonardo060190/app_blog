@@ -4,6 +4,7 @@ const sequelize = require('sequelize');// Importa a biblioteca do Sequelize
 module.exports = {
 
     ////////////////////////////////////////////////////////////////////////////////////////////////
+
     //Rota para retonar todos os Usuários
     async index(req, res) {
         await Usuarios.sequelize.query(`SELECT * FROM usuarios ORDER BY nome `)
@@ -17,6 +18,7 @@ module.exports = {
             });
     },
     ////////////////////////////////////////////////////////////////////////////////////////////////
+
    // busca os Usuários referente ao id informado
    async buscaid(req, res) {
     await Usuarios.sequelize.query(`SELECT * FROM usuarios WHERE id = ?`,
@@ -81,6 +83,7 @@ async update(req, res) {
 
 },
 ////////////////////////////////////////////////////////////////////////////////////////////////
+
 //insere um novo ususario na tabela
 async store(req, res) {
     await Usuarios.sequelize.query(
@@ -115,6 +118,7 @@ async store(req, res) {
         });
 },
 ////////////////////////////////////////////////////////////////////////////////////////////////
+
 // deleta o usuarios referente ao id informado
 async delete(req, res) {
     await Usuarios.sequelize.query(`DELETE FROM usuarios WHERE id = ?`,
