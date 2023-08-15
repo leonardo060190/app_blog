@@ -86,6 +86,17 @@ async update(req, res) {
 
 //insere um novo ususario na tabela
 async store(req, res) {
+            // Verifique se o e-mail já está cadastrado
+            const usuarioExistente = await Usuarios.findOne({
+                where: { email: req.body.email }
+            });
+
+            if (usuarioExistente) {
+                return res.status(400).json({
+                    success: false,
+                    message: "E-mail já está cadastrado."
+                });
+            }
     await Usuarios.sequelize.query(
         `INSERT INTO usuarios (
             nome,
