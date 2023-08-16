@@ -1,4 +1,4 @@
-const Posts = require('../models/Posts')//Importa o arquivo livros da pasta Models
+const Posts = require('../models/Posts')//Importa o arquivo Posts da pasta Models
 const sequelize = require('sequelize');// Importa a biblioteca do Sequelize
 
 module.exports = {
@@ -20,7 +20,7 @@ module.exports = {
     ////////////////////////////////////////////////////////////////////////////////////////////////
 
    // busca os Post referente ao id informado
-   async buscaid(req, res) {
+   async buscaId(req, res) {
     await Posts.sequelize.query(`SELECT * FROM posts WHERE id = ?`,
         { replacements: [req.params.id] })
         .then(([results, metadata]) => {
@@ -33,6 +33,31 @@ module.exports = {
                 res.json({
                     success: true,
                     Posts: results[0],
+                });
+            }
+        }).catch((error) => {
+            res.status(500).json({
+                success: false,
+                message: error.message,
+            });
+        });
+},
+////////////////////////////////////////////////////////////////////////////////////////////////
+
+ // busca os Post pelo status
+ async buscaStatus(req, res) {
+    await Posts.sequelize.query(`SELECT * FROM posts WHERE status = ?`,
+        { replacements: [req.params.status] })
+        .then(([results, metadata]) => {
+            if (results.length === 0) {
+                res.status(404).json({
+                    success: false,
+                    message: "Post não encontrada",
+                });
+            } else {
+                res.json({
+                    success: true,
+                    Posts: results,
                 });
             }
         }).catch((error) => {
@@ -88,7 +113,7 @@ async update(req, res) {
 },
 ////////////////////////////////////////////////////////////////////////////////////////////////
 
-//insere um novo post na tabela
+//insere um novo Post na tabela
 async store(req, res) {
     await Posts.sequelize.query(
         `INSERT INTO posts (
@@ -127,7 +152,7 @@ async store(req, res) {
 },
 ////////////////////////////////////////////////////////////////////////////////////////////////
 
-// deleta o post referente ao id informado
+// deleta o Post referente ao id informado
 async delete(req, res) {
     await Posts.sequelize.query(`DELETE FROM posts WHERE id = ?`,
         { replacements: [req.params.id] })

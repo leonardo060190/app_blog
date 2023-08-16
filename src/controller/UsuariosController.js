@@ -1,4 +1,4 @@
-const Usuarios = require('../models/Usuarios')//Importa o arquivo livros da pasta Models
+const Usuarios = require('../models/Usuarios')//Importa o arquivo Usuários da pasta Models
 const sequelize = require('sequelize');// Importa a biblioteca do Sequelize
 
 module.exports = {
@@ -19,7 +19,7 @@ module.exports = {
     },
     ////////////////////////////////////////////////////////////////////////////////////////////////
 
-    // busca os Usuários referente ao id informado
+    // busca o Usuário referente ao id informado
     async buscaid(req, res) {
         await Usuarios.sequelize.query(`SELECT * FROM usuarios WHERE id = ?`,
             { replacements: [req.params.id] })
@@ -84,7 +84,7 @@ module.exports = {
     },
     ////////////////////////////////////////////////////////////////////////////////////////////////
 
-    //insere um novo ususario na tabela
+    //insere um novo Usuário na tabela
     async store(req, res) {
         // Verifique se o e-mail já está cadastrado
         const usuarioExistente = await Usuarios.findOne({
@@ -130,7 +130,7 @@ module.exports = {
     },
     ////////////////////////////////////////////////////////////////////////////////////////////////
 
-    // deleta o usuarios referente ao id informado
+    // deleta o Usuário referente ao id informado
     async delete(req, res) {
         await Usuarios.sequelize.query(`DELETE FROM usuarios WHERE id = ?`,
             { replacements: [req.params.id] })
