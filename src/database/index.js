@@ -1,5 +1,5 @@
 const Sequelize = require('sequelize'); // importa a biblioteca do sequelize
-const dbConfig = require('../config/database');
+const dbConfig = require('../config/database'); //
 
 const Usuarios = require('../models/Usuarios');
 const Posts = require('../models/Posts');
