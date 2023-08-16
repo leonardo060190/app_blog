@@ -27,7 +27,7 @@ module.exports = {
                 if (results.length === 0) {
                     res.status(404).json({
                         success: false,
-                        message: "Usuários não encontrada",
+                        message: "Usuário não encontrado",
                     });
                 } else {
                     res.json({
