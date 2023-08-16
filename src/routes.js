@@ -2,7 +2,7 @@ const express = require('express'); // Importa a biblioteca do express
 const UsuariosController = require('./controller/UsuariosController'); // Importa o arquivo UsuariosController da pasta Controller
 const PostsController = require('./controller/PostsController'); // importa o arquivo PostsController da pasta Controller
 
-const routes = express.Router(); 
+const routes = express.Router(); // importa a biblioteca router do express
 
 routes.get('/', (req, res) => {
 res.send('Olá leonardo')
