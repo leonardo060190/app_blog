@@ -22,7 +22,6 @@ routes.delete('/usuarios/:id', UsuariosController.delete); //rota que deleta um 
 //Rotas da tabela Posts
 routes.get('/posts', PostsController.index); // rota que retorna os dados da tabela Posts
 routes.get('/posts/:id', PostsController.buscaId);// rota que retorna os dados tabela Posts pelo id informado
-routes.get('/posts/status/:status', PostsController.buscaStatus);// rota que retorna os dados tabela Posts pelo status informado
 routes.post('/posts', PostsController.store); //rota que adiciona um novo post na tabela Posts
 routes.put('/posts/:id', PostsController.update); //rota que altera os dados de um post pelo id 
 routes.delete('/posts/:id', PostsController.delete); //rota que deleta um post pelo id informado

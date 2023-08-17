@@ -5,7 +5,6 @@ class Posts extends Model {
         super.init({
             titulo: DataTypes.STRING(150),
             conteudo: DataTypes.TEXT,
-            status: DataTypes.STRING(50),
             id_usuario: DataTypes.INTEGER,
             created_at: DataTypes.DATE,
             updated_at: DataTypes.DATE

@@ -18,10 +18,6 @@ module.exports = {
         type: Sequelize.TEXT,
         allowNull: false
       },
-      status: {
-        type: Sequelize.STRING(50),
-        allowNull: false
-      },
       id_usuario: {
         type: Sequelize.INTEGER,
         allowNull: false,
