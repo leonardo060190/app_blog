@@ -1,8 +1,7 @@
-# app_blogs
-
 Documentação da API de Blog
 
 Introdução
+
 Esta API permite a gestão de usuários e posts para um sistema de blog simples.
 
 Base URL
@@ -13,24 +12,20 @@ ou
 
 http://localhost:3306/
 
-  Endpoints
+
+Endpoints
 
 Usuários
 
-  Criar um usuário
-  
+Criar um usuário
 URL: /usuarios
-
 Método: POST
-
 Body:
 {
     "nome": "João Silva",
     "email": "joao@example.com"
 }
-
 Resposta de Sucesso:
-
 {
 
 "success": true,
@@ -39,18 +34,17 @@ Resposta de Sucesso:
 }
 
 Se o Usuário já estiver cadastrado:
+faz a verificação pelo e-mail
 
 Resposta
 
 {
 	"success":  false,
- 
 	"message":  "E-mail já está cadastrado."
 }
 
 
 Listar todos os usuários
-
 URL: /usuarios
 
 Método: GET
@@ -83,7 +77,6 @@ Resposta de Sucesso:
 
 
 Obter um usuário pelo ID
-
 URL: /usuarios/:id
 
 Método: GET
@@ -102,11 +95,8 @@ Resposta de Sucesso:
 
 }
 
-}
-
 
 Altera um usuário pelo ID
-
 URL: /usuarios/:id
 
 Método: PUT
@@ -124,7 +114,6 @@ Resposta de Sucesso:
 
 
 Deleta um usuário pelo ID
-
 URL: /usuarios/:id
 
 Método: DELETE
@@ -143,12 +132,9 @@ Resposta de Sucesso:
 
 Posts
 
-  Criar um post
-
+Criar um post
 URL: /posts
-
 Método: POST
-
 Body:
 {
     "titulo": "Primeiro Post",
@@ -169,14 +155,13 @@ Resposta de Sucesso:
 
 
 Listar todos os posts
-
 URL: /posts
 
 Método: GET
 
 Resposta de Sucesso:
 
-[
+
     {
         "id": 1,
         "titulo": "Primeiro Post",
@@ -186,7 +171,8 @@ Resposta de Sucesso:
         "data_atualizacao": "2023-08-01T11:00:00Z"
     },
     ...
-]
+
+
 
 
 Obter um post pelo ID
@@ -206,8 +192,8 @@ Resposta de Sucesso:
 }
 
 
-Altera um usuário pelo ID
 
+Altera um usuário pelo ID
 URL: /usuarios/:id
 
 Método: PUT
@@ -225,7 +211,6 @@ Resposta de Sucesso:
 
 
 Deleta um usuário pelo ID
-
 URL: /usuarios/:id
 
 Método: DELETE
