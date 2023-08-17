@@ -1,5 +1,4 @@
 const express = require('express');//importa a biblioteca express
-const cookieParser = require('cookie-parser');// Importa a biblioteca para lidar com cookies.
 const cors = require('cors');// Importa a biblioteca para lidar com políticas de mesma origem (CORS).
 const bodyParser = require('body-parser');//faz a conversão de JSON para javascript
 const app = express();// Cria uma instância do servidor utilizando o express
@@ -11,7 +10,6 @@ require('./database')
 
 // Configurações globais do aplicativo
 app.use(cors());// Habilita a política de CORS para permitir comunicação entre diferentes domínios
-app.use(cookieParser());
 app.use(express.json());// Configurando o express para aceitar JSON
 app.use(bodyParser.json());// Analisa o corpo das requisições em formato JSON
 app.use(bodyParser.urlencoded({ extended: true })); // Analisa o corpo das requisições codificadas em URL
