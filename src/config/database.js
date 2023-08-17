@@ -4,7 +4,7 @@ module.exports = {
     username: 'root',
     port: '3306',// porta do banco de dados
     password: 'root',//senha do banco de dados
-    database: 'app_blogs',//nome do banco de dados que vai utilizar no projeto
+    database: 'app_blog',//nome do banco de dados que vai utilizar no projeto
     define: {
         timestamps: false,//data de crição e data de alteração
         underscored: true
