@@ -1,3 +1,9 @@
+// significado do controller
+//Controller É a camada de controle, 
+//responsável por ligar o model e a view, 
+//fazendo com que os models possam ser 
+//repassados para as views e vice-versa.
+
 const Posts = require('../models/Posts')//Importa o arquivo Posts da pasta Models
 const sequelize = require('sequelize');// Importa a biblioteca do Sequelize
 
