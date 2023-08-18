@@ -5,7 +5,7 @@ module.exports = {
 
     ////////////////////////////////////////////////////////////////////////////////////////////////
 
-    //Rota para retonar todos os Usuários
+    //Metodo para retonar todos os Usuários
     async index(req, res) {
         await Usuarios.sequelize.query(`SELECT * FROM usuarios ORDER BY nome `)
             .then(([results, metadata]) => {
@@ -19,7 +19,7 @@ module.exports = {
     },
     ////////////////////////////////////////////////////////////////////////////////////////////////
 
-    // busca o Usuário referente ao id informado
+    // Metodo busca o Usuário referente ao id informado
     async buscaid(req, res) {
         await Usuarios.sequelize.query(`SELECT * FROM usuarios WHERE id = ?`,
             { replacements: [req.params.id] })
@@ -44,7 +44,7 @@ module.exports = {
     },
     ////////////////////////////////////////////////////////////////////////////////////////////////
 
-    // autera os dados que for refente os id informado
+    // Metodo autera os dados que for refente os id informado
     async update(req, res) {
         await Usuarios.sequelize.query(
             `UPDATE usuarios SET 
@@ -84,7 +84,7 @@ module.exports = {
     },
     ////////////////////////////////////////////////////////////////////////////////////////////////
 
-    //insere um novo Usuário na tabela
+    // Metodo insere um novo Usuário na tabela
     async store(req, res) {
         // Verifique se o e-mail já está cadastrado
         const usuarioExistente = await Usuarios.findOne({
@@ -130,7 +130,7 @@ module.exports = {
     },
     ////////////////////////////////////////////////////////////////////////////////////////////////
 
-    // deleta o Usuário referente ao id informado
+    // Metodo deleta o Usuário referente ao id informado
     async delete(req, res) {
         await Usuarios.sequelize.query(`DELETE FROM usuarios WHERE id = ?`,
             { replacements: [req.params.id] })

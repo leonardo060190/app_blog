@@ -5,7 +5,7 @@ module.exports = {
 
     ////////////////////////////////////////////////////////////////////////////////////////////////
 
-    //Rota para retonar todos os Posts
+    // Metodo para retonar todos os Posts
     async index(req, res) {
         await Posts.sequelize.query(`SELECT * FROM posts ORDER BY created_at`)
             .then(([results, metadata]) => {
@@ -19,7 +19,7 @@ module.exports = {
     },
     ////////////////////////////////////////////////////////////////////////////////////////////////
 
-    // busca os Post referente ao id informado
+    // Metodo busca os Post referente ao id informado
     async buscaId(req, res) {
         await Posts.sequelize.query(`SELECT * FROM posts WHERE id = ?`,
             { replacements: [req.params.id] })
@@ -44,7 +44,7 @@ module.exports = {
     },
     ////////////////////////////////////////////////////////////////////////////////////////////////
 
-    // Autera os dados referente ao id informado
+    // Metodo Autera os dados referente ao id informado
     async update(req, res) {
         await Posts.sequelize.query(
             `UPDATE posts SET 
@@ -86,7 +86,7 @@ module.exports = {
     },
     ////////////////////////////////////////////////////////////////////////////////////////////////
 
-    //insere um novo Post na tabela
+    // Metodo insere um novo Post na tabela
     async store(req, res) {
         await Posts.sequelize.query(
             `INSERT INTO posts (
@@ -123,7 +123,7 @@ module.exports = {
     },
     ////////////////////////////////////////////////////////////////////////////////////////////////
 
-    // deleta o Post referente ao id informado
+    // Metodo deleta o Post referente ao id informado
     async delete(req, res) {
         await Posts.sequelize.query(`DELETE FROM posts WHERE id = ?`,
             { replacements: [req.params.id] })
