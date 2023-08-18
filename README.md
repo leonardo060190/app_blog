@@ -18,13 +18,17 @@ Endpoints
 Usuários
 
 Criar um usuário
+
 URL: /usuarios
+
 Método: POST
+
 Body:
 {
     "nome": "João Silva",
     "email": "joao@example.com"
 }
+
 Resposta de Sucesso:
 {
 
@@ -45,6 +49,7 @@ Resposta
 
 
 Listar todos os usuários
+
 URL: /usuarios
 
 Método: GET
@@ -83,6 +88,7 @@ Método: GET
 
 Resposta de Sucesso:
 
+
 {
 
 	"success": true,
@@ -95,8 +101,10 @@ Resposta de Sucesso:
 
 }
 
+}
 
 Altera um usuário pelo ID
+
 URL: /usuarios/:id
 
 Método: PUT
@@ -114,6 +122,7 @@ Resposta de Sucesso:
 
 
 Deleta um usuário pelo ID
+
 URL: /usuarios/:id
 
 Método: DELETE
@@ -133,8 +142,11 @@ Resposta de Sucesso:
 Posts
 
 Criar um post
+
 URL: /posts
+
 Método: POST
+
 Body:
 {
     "titulo": "Primeiro Post",
@@ -155,6 +167,7 @@ Resposta de Sucesso:
 
 
 Listar todos os posts
+
 URL: /posts
 
 Método: GET
@@ -176,6 +189,7 @@ Resposta de Sucesso:
 
 
 Obter um post pelo ID
+
 URL: /posts/:id
 
 Método: GET
@@ -194,6 +208,7 @@ Resposta de Sucesso:
 
 
 Altera um usuário pelo ID
+
 URL: /usuarios/:id
 
 Método: PUT
@@ -202,15 +217,16 @@ Resposta de Sucesso:
 
 {
 
-{
+ {
 	"success":  true,
 	"message":  "Post atualizado com sucesso"
-}
+ }
 
 }
 
 
 Deleta um usuário pelo ID
+
 URL: /usuarios/:id
 
 Método: DELETE
