@@ -138,8 +138,12 @@ module.exports = {
 
     // Metodo deleta o Usuário referente ao id informado
     async delete(req, res) {
-        await Usuarios.sequelize.query(`DELETE FROM usuarios WHERE id = ?`,
+        await Usuarios.sequelize.query(
+
+            `DELETE FROM usuarios WHERE id = ?`,
+
             { replacements: [req.params.id] })
+            
             .then(([results, metadata]) => {
                 if (metadata.affectedRows === 0) {
                     res.status(404).json({
